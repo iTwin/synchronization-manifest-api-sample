@@ -12,18 +12,20 @@ Please make sure to follow these steps for running this code sample application:
 1.  `.env` file is required for setting up environmental variables used by the server application. Create `.env` file at `./api-manifest-sample/AccessTokenGenerator` and fill out required environmental variables.
 
     The file contents should contain:
-
+    ```
     CONTAINER_NAME = <container name>                  // `CONTAINER_NAME` is your newly created container name inside Azure Blob storage, example: test
     CONNECTION_STRING = <connection string>            // `CONNECTION_STRING` is your Azure Storage account connection string, example: DefaultEndpointsProtocol=http;AccountName=devstoreaccount1;AccountKey=Eby8vdM02xNOcqFlqUwJPLlmEtl6IFsuFq2UVErCz4I6tq/K1SZFPTOtr/KBHBeksoGMGw==;
+    ```
 
 1.  `.env` file is required for setting up environmental variables used by a portal application. Create `.env` file at `./api-manifest-sample/Portal` and fill out required environmental variables.
 
     The file contents should contain:
 
+    ```
     REACT_APP_PROJECT_ID = <Project ID>                // `REACT_APP_PROJECT_ID` is your created Project ID.
     REACT_APP_IMODEL_ID = <iModel ID>                  // `REACT_APP_IMODEL_ID` is your created iModel's ID created inside your Project with corresponding Project ID.
     REACT_APP_CLIENT_ID = <client ID>                  // `REACT_APP_CLIENT_ID` is your [registered application's](https://developer.bentley.com/my-apps/) Client ID. 
-        
+    ```    
     Registered application's:
 
     * Scopes: `imodels:modify`, `imodels:read`, `synchronization:modify`, `synchronization:read`.
