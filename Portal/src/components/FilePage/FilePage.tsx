@@ -64,8 +64,8 @@ export const FilePage = (props: RouteComponentProps) => {
       {runState ?
         <ProgressLinear
           labels={[runState]}
-          indeterminate={runState === 'Success' || 'Failed' ? true : undefined}
-          status={runState === 'Success' ? 'positive' : runState === 'Failed' ? 'negative' : undefined}
+          indeterminate={runState === 'Success' || 'Error' ? true : undefined}
+          status={runState === 'Success' ? 'positive' : runState === 'Error' ? 'negative' : undefined}
         />
         :
         <FileUpload
