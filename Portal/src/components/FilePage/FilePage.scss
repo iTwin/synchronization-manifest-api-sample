@@ -1,0 +1,33 @@
+/*---------------------------------------------------------------------------------------------
+ * Copyright (c) Bentley Systems, Incorporated. All rights reserved.
+ * See LICENSE.md in the project root for license terms and full copyright notice.
+ *--------------------------------------------------------------------------------------------*/
+
+@import '@itwin/itwinui-css/scss/index.scss';
+
+.iui-file-upload {
+  width: 100%;
+  height: 100%;
+}
+
+.iui-progress-indicator-linear {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.iui-progress-indicator-linear > .iui-track ,
+.iui-progress-indicator-linear > .iui-label {
+  width: 50%;
+}
+
+.file-page {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+}

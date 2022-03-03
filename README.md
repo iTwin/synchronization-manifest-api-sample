@@ -26,9 +26,9 @@ Please make sure to follow these steps for running this code sample application:
         
     Registered application's:
 
-    1. Scopes: `imodels:modify`, `imodels:read`, `synchronization:modify`, `synchronization:read`.
-    1. Redirect Urls: `http://localhost:3000/silent-signin-oidc`, `http://localhost:3000/signin-oidc`, `http://localhost:3000/`.
-    1. Post Logout Urls: `http://localhost:3000/signout-oidc`
+    * Scopes: `imodels:modify`, `imodels:read`, `synchronization:modify`, `synchronization:read`.
+    * Redirect Urls: `http://localhost:3000/silent-signin-oidc`, `http://localhost:3000/signin-oidc`, `http://localhost:3000/`.
+    * Post Logout Urls: `http://localhost:3000/signout-oidc`
 
 1.  Open two terminal tabs.
 1.  In first terminal tab navigate to `./api-manifest-sample/AccessTokenGenerator`.
@@ -43,15 +43,15 @@ Please make sure to follow these steps for running this code sample application:
 
 Code is documented to help the user understand how data is being used from each API call, how authorization workflow is implemented, what is the purpose of the main page and some other minor details.
 
-[App.tsx](./src/App.tsx) contains a general navigation scheme.
+[App.tsx](./Portal/src/App.tsx) contains a general navigation scheme.
 
-[auth](./src/auth) folder contains all OAuth2 authorization workflow implementation.
+[auth](./Portal/src/auth) folder contains all OAuth2 authorization workflow implementation.
 
-[components](./src/components) folder contains most of application logic. Component namings are self-explanatory.
+[components](./Portal/src/components) folder contains most of application logic. Component namings are self-explanatory.
 
-[services](./src/services) folder contains Azure file upload and Manifest API functionality. Refer to each for further explanations of each API call and how the data is used.
+[services](./Portal/src/services) folder contains Azure file upload and Manifest API functionality. Refer to each for further explanations of each API call and how the data is used.
 
-[index.ts](../AccessTokenGenerator/index.ts) contains all server logic needed for accessUrl retrieval.
+[index.ts](./AccessTokenGenerator/index.ts) contains all server logic needed for accessUrl retrieval.
 
 ## Introduction to application workflow
 
