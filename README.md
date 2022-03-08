@@ -1,4 +1,4 @@
-# Sample Manifest API portal application
+# Synchronization Manifest API sample
 
 This is a sample application that demonstrates the usage of [Manifest Connection](https://developer.bentley.com/apis/synchronization/operations/get-manifest-connection/). This application implements file upload to Azure Blob Storage functionality and basic Manifest Connection operations with the presentational result.
 
@@ -9,7 +9,7 @@ Please make sure to follow these steps for running this code sample application:
 1.  Install npm on your machine.
 1.  Install Node.js version [14.17.3](https://nodejs.org/en/blog/release/v14.17.3/).
 1.  Clone this repository.
-1.  `.env` file is required for setting up environmental variables used by the server application. Create `.env` file at `./api-manifest-sample/AccessTokenGenerator` and fill out required environmental variables.
+1.  `.env` file is required for setting up environmental variables used by the server application. Create `.env` file at `./synchronization-manifest-api-sample/AccessTokenGenerator` and fill out required environmental variables.
 
     The file contents should contain:
     ```
@@ -17,7 +17,7 @@ Please make sure to follow these steps for running this code sample application:
     CONNECTION_STRING = <connection string>            // `CONNECTION_STRING` is your Azure Storage account connection string, example: DefaultEndpointsProtocol=http;AccountName=devstoreaccount1;AccountKey=Eby8vdM02xNOcqFlqUwJPLlmEtl6IFsuFq2UVErCz4I6tq/K1SZFPTOtr/KBHBeksoGMGw==;
     ```
 
-1.  `.env` file is required for setting up environmental variables used by a portal application. Create `.env` file at `./api-manifest-sample/Portal` and fill out required environmental variables.
+1.  `.env` file is required for setting up environmental variables used by a portal application. Create `.env` file at `./synchronization-manifest-api-sample/Portal` and fill out required environmental variables.
 
     The file contents should contain:
 
@@ -33,11 +33,11 @@ Please make sure to follow these steps for running this code sample application:
     * Post Logout Urls: `http://localhost:3000/signout-oidc`
 
 1.  Open two terminal tabs.
-1.  In first terminal tab navigate to `./api-manifest-sample/AccessTokenGenerator`.
+1.  In first terminal tab navigate to `./synchronization-manifest-api-sample/AccessTokenGenerator`.
 1.  Run `npm install` to install the required dependencies.
 1.  Run `npm build` to build the code.
 1.  Run `npm start` to start the server.
-1.  In the second terminal tab navigate to `./api-manifest-sample/Portal`.
+1.  In the second terminal tab navigate to `./synchronization-manifest-api-sample/Portal`.
 1.  Run `npm install` to install the required dependencies.
 1.  Run `npm start` to start the portal.
 1.  Navigate to localhost:3000 (default port) in your browser.
