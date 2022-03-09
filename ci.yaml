@@ -26,11 +26,11 @@ jobs:
       inputs:
         versionSpec: 14.17.4
         checkLatest: true
-    - task: Npm@1
-      displayName: npm install
-      inputs:
-        command: 'install'
-    - task: Npm@2
-      displayName: npm build
-      inputs:
-        command: 'build'
+
+    - script: npm install
+      displayName: "npm install"
+      workingDirectory: "Portal"
+
+    - script: npm build
+      displayName: "npm build"
+      workingDirectory: "Portal"
