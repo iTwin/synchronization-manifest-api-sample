@@ -1,16 +1,16 @@
-# iTwin.js Protobuf IPC CI build
+# Synchronization Manifest API Sample CI build
 #
-# This pipeline installs, builds, and tests all projects defined in rush.json, and
-# is used to validate all PRs and updates to master.
+# This pipeline installs, builds and
+# is used to validate all PRs and updates to main.
 
 trigger:
-  - master
+  - main
 
 pr:
   drafts: false
   branches:
     include:
-      - master
+      - main
 
 jobs:
 - job: Synchronization_Manifest_API_Sample_Build
