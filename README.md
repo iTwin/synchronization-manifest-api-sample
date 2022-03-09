@@ -25,7 +25,8 @@ Please make sure to follow these steps for running this code sample application:
     REACT_APP_PROJECT_ID = <Project ID>                // `REACT_APP_PROJECT_ID` is your created Project ID.
     REACT_APP_IMODEL_ID = <iModel ID>                  // `REACT_APP_IMODEL_ID` is your created iModel's ID created inside your Project with corresponding Project ID.
     REACT_APP_CLIENT_ID = <client ID>                  // `REACT_APP_CLIENT_ID` is your [registered application's](https://developer.bentley.com/my-apps/) Client ID. 
-    ```    
+    ```   
+    
     Registered application's:
 
     * Scopes: `imodels:modify`, `imodels:read`, `synchronization:modify`, `synchronization:read`.
