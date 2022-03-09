@@ -1,0 +1,36 @@
+# iTwin.js Protobuf IPC CI build
+#
+# This pipeline installs, builds, and tests all projects defined in rush.json, and
+# is used to validate all PRs and updates to master.
+
+trigger:
+  - master
+
+pr:
+  drafts: false
+  branches:
+    include:
+      - master
+
+jobs:
+- job: Synchronization_Manifest_API_Sample_Build
+  displayName: Synchronization Manifest API Sample CI build
+  pool:
+    vmImage: ubuntu-latest
+  workspace:
+    clean: all
+  steps:
+    - checkout: self
+    - task: NodeTool@0
+      displayName: Use Node 14
+      inputs:
+        versionSpec: 14.17.4
+        checkLatest: true
+    - task: Npm@1
+      displayName: npm install
+      inputs:
+        command: 'install'
+    - task: Npm@2
+      displayName: npm build
+      inputs:
+        command: 'build'
