@@ -2,20 +2,29 @@
 
 This is a sample application that demonstrates the usage of [Manifest Connection](https://developer.bentley.com/apis/synchronization/operations/get-manifest-connection/). This application implements file upload to Azure Blob Storage functionality and basic Manifest Connection operations with the presentational result.
 
+## Prerequisites
+
+- [Git](https://git-scm.com/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Node](https://nodejs.org/en/): an installation of the latest security patch of Node 14. The Node installation also includes the **npm** package manager.
+- [Visual Studio Code](https://code.visualstudio.com/): an optional dependency, but the repository structure is optimized for its use.
+
 ## Setup
 
 Please make sure to follow these steps for running this code sample application:
 
-1.  Install npm on your machine.
-1.  Install Node.js version [14.17.3](https://nodejs.org/en/blog/release/v14.17.3/).
 1.  Clone this repository.
+1.  Create an iTwin Project, see [tutorial](https://developer.bentley.com/tutorials/create-and-query-projects-guide/) for further information.
+1.  Create an iModel inside created iTwin Project, see [tutorial](https://developer.bentley.com/tutorials/create-empty-imodel/) for further information.  
 1.  `.env` file is required for setting up environmental variables used by the server application. Create `.env` file at `./synchronization-manifest-api-sample/AccessTokenGenerator` and fill out required environmental variables.
 
     The file contents should contain:
     ```
     CONTAINER_NAME = <container name>                  // `CONTAINER_NAME` is your newly created container name inside Azure Blob storage, example: test
-    CONNECTION_STRING = <connection string>            // `CONNECTION_STRING` is your Azure Storage account connection string, example: DefaultEndpointsProtocol=http;AccountName=devstoreaccount1;AccountKey=Eby8vdM02xNOcqFlqUwJPLlmEtl6IFsuFq2UVErCz4I6tq/K1SZFPTOtr/KBHBeksoGMGw==;
+    CONNECTION_STRING = <connection string>            // `CONNECTION_STRING` is your Azure Storage account connection string, fake example: DefaultEndpointsProtocol=http;AccountName=devstoreaccount1;AccountKey=Eby8vdM02xNOcqFlqUwJPLlmEtl6IFsuFq2UVErCz4I6tq/K1SZFPTOtr/KBHBeksoGMGw==;
     ```
+    
+    Read more about the configuration of Azure Storage connection strings in the official [documentation](https://docs.microsoft.com/en-us/azure/storage/common/storage-configure-connection-string).
 
 1.  `.env` file is required for setting up environmental variables used by a portal application. Create `.env` file at `./synchronization-manifest-api-sample/Portal` and fill out required environmental variables.
 
