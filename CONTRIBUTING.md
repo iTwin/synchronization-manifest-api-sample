@@ -4,8 +4,6 @@ We welcome all types of contribution.
 
 Need a feature or found a bug? Please create an [issue](https://github.com/iTwin/synchronization-manifest-api-sample/issues).
 
-Have a question or suggestion? Please create a [discussion](https://github.com/iTwin/synchronization-manifest-api-sample/discussions).
-
 Want to contribute by creating a pull request? Great! [Fork Synchronization Manifest API Sample](https://docs.github.com/en/get-started/quickstart/fork-a-repo#forking-a-repository) to get started.
 
 ---
