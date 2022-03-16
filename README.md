@@ -4,6 +4,7 @@ This is a sample application that demonstrates the usage of [Manifest Connection
 
 ## Prerequisites
 
+
 - [Git](https://git-scm.com/)
 - [TypeScript](https://www.typescriptlang.org/)
 - [Node](https://nodejs.org/en/): an installation of the latest security patch of Node 14. The Node installation also includes the **npm** package manager.
