@@ -11,6 +11,7 @@ This is a sample application that demonstrates the usage of [Manifest Connection
 
 ## Setup
 
+
 Please make sure to follow these steps for running this code sample application:
 
 1.  Clone this repository.
