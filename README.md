@@ -14,8 +14,8 @@ This is a sample application that demonstrates the usage of [Manifest Connection
 Please make sure to follow these steps for running this code sample application:
 
 1.  Clone this repository.
-1.  Create an iTwin Project, see [tutorial](https://developer.bentley.com/tutorials/create-and-query-projects-guide/) for further information.
-1.  Create an iModel inside created iTwin Project, see [tutorial](https://developer.bentley.com/tutorials/create-empty-imodel/) for further information.  
+1.  Create a Project, see [tutorial](https://developer.bentley.com/tutorials/create-and-query-projects-guide/) for further information.
+1.  Create an iModel inside created Project, see [tutorial](https://developer.bentley.com/tutorials/create-empty-imodel/) for further information.  
 1.  `.env` file is required for setting up environmental variables used by the server application. Create `.env` file at `./synchronization-manifest-api-sample/AccessTokenGenerator` and fill out required environmental variables.
 
     The file contents should contain:
