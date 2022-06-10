@@ -41,7 +41,6 @@ export const FilePage = (props: RouteComponentProps) => {
     const runLocation: string | null = await runManifestConnectionDefinition(
       connectionDefinitionId!
     );
-
     // Get Manifest connection run results
     if (runLocation != null) {
       var interval = setInterval(async () => {
