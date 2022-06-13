@@ -9,7 +9,7 @@ This is a sample application that demonstrates the usage of [Manifest Connection
 - [Node](https://nodejs.org/en/): an installation of the latest security patch of Node 14. The Node installation also includes the **npm** package manager.
 - [Visual Studio Code](https://code.visualstudio.com/): an optional dependency, but the repository structure is optimized for its use.
 
-## Setup
+## Setup 
 
 Please make sure to follow these steps for running this code sample application:
 
