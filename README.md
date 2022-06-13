@@ -1,5 +1,7 @@
 # Synchronization Manifest API sample
 
+Arbitrary change
+
 This is a sample application that demonstrates the usage of [Manifest Connection](https://developer.bentley.com/apis/synchronization/operations/get-manifest-connection/). This application implements file upload to Azure Blob Storage functionality and basic Manifest Connection operations with the presentational result.
 
 ## Prerequisites
