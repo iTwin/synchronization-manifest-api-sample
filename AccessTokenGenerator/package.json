@@ -8,6 +8,9 @@
     "start": "npm run serve",
     "build": "tsc -p tsconfig.json"
   },
+  "resolutions": {
+    "got": "11.8.5"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
