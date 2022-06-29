@@ -15,15 +15,16 @@ Please make sure to follow these steps for running this code sample application:
 
 1.  Clone this repository.
 1.  Create a Project, see [tutorial](https://developer.bentley.com/tutorials/create-and-query-projects-guide/) for further information.
-1.  Create an iModel inside created Project, see [tutorial](https://developer.bentley.com/tutorials/create-empty-imodel/) for further information.  
+1.  Create an iModel inside created Project, see [tutorial](https://developer.bentley.com/tutorials/create-empty-imodel/) for further information.
 1.  `.env` file is required for setting up environmental variables used by the server application. Create `.env` file at `./synchronization-manifest-api-sample/AccessTokenGenerator` and fill out required environmental variables.
 
     The file contents should contain:
+
     ```
     CONTAINER_NAME = <container name>                  // `CONTAINER_NAME` is your newly created container name inside Azure Blob storage, example: test
     CONNECTION_STRING = <connection string>            // `CONNECTION_STRING` is your Azure Storage account connection string, fake example: DefaultEndpointsProtocol=http;AccountName=devstoreaccount1;AccountKey=Eby8vdM02xNOcqFlqUwJPLlmEtl6IFsuFq2UVErCz4I6tq/K1SZFPTOtr/KBHBeksoGMGw==;
     ```
-    
+
     Read more about the configuration of Azure Storage connection strings in the official [documentation](https://docs.microsoft.com/en-us/azure/storage/common/storage-configure-connection-string).
 
 1.  `.env` file is required for setting up environmental variables used by a portal application. Create `.env` file at `./synchronization-manifest-api-sample/Portal` and fill out required environmental variables.
@@ -33,23 +34,25 @@ Please make sure to follow these steps for running this code sample application:
     ```
     REACT_APP_PROJECT_ID = <Project ID>                // `REACT_APP_PROJECT_ID` is your created Project ID.
     REACT_APP_IMODEL_ID = <iModel ID>                  // `REACT_APP_IMODEL_ID` is your created iModel's ID created inside your Project with corresponding Project ID.
-    REACT_APP_CLIENT_ID = <client ID>                  // `REACT_APP_CLIENT_ID` is your [registered application's](https://developer.bentley.com/my-apps/) Client ID. 
-    ```    
+    REACT_APP_CLIENT_ID = <client ID>                  // `REACT_APP_CLIENT_ID` is your [registered application's](https://developer.bentley.com/my-apps/) Client ID.
+    ```
+
     Registered application's:
 
-    * Scopes: `imodels:modify`, `imodels:read`, `synchronization:modify`, `synchronization:read`.
-    * Redirect Urls: `http://localhost:3000/silent-signin-oidc`, `http://localhost:3000/signin-oidc`, `http://localhost:3000/`.
-    * Post Logout Urls: `http://localhost:3000/signout-oidc`
+    - Scopes: `imodels:modify`, `imodels:read`, `synchronization:modify`, `synchronization:read`.
+    - Redirect Urls: `http://localhost:3000/silent-signin-oidc`, `http://localhost:3000/signin-oidc`, `http://localhost:3000/`.
+    - Post Logout Urls: `http://localhost:3000/signout-oidc`
 
 1.  Open two terminal tabs.
 1.  In first terminal tab navigate to `./synchronization-manifest-api-sample/AccessTokenGenerator`.
-1.  Run `npm install` to install the required dependencies.
-1.  Run `npm build` to build the code.
-1.  Run `npm start` to start the server.
+1.  Run `yarn install` to install the required dependencies.
+1.  Run `yarn build` to build the code.
+1.  Run `yarn start` to start the server.
 1.  In the second terminal tab navigate to `./synchronization-manifest-api-sample/Portal`.
-1.  Run `npm install` to install the required dependencies.
-1.  Run `npm start` to start the portal.
+1.  Run `yarn install` to install the required dependencies.
+1.  Run `yarn start` to start the portal.
 1.  Navigate to localhost:3000 (default port) in your browser.
+
 ## Code sample introduction
 
 Code is documented to help the user understand how data is being used from each API call, how authorization workflow is implemented, what is the purpose of the main page and some other minor details.
