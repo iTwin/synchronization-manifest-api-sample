@@ -6,8 +6,8 @@
 import { RouteComponentProps } from '@reach/router';
 import { User } from 'oidc-client';
 import { useEffect, useState } from 'react';
-import { LoadingOverlay } from '../components/LoadingOverlay/LoadingOverlay';
-import { AuthorizationInformation } from '../dto/Types';
+import { LoadingOverlay } from '../components/loadingOverlay/loadingOverlay';
+import { AuthorizationInformation } from '../typedef/types';
 import { apiDomain } from '../setup';
 
 export interface SynchronizationAuthWrapperProps {
@@ -33,9 +33,12 @@ export const SynchronizationAuthWrapper = (
           { headers: requestHeaders }
         )
       ).json();
-      if (!authInfo.isUserAuthorized && authInfo._links && authInfo._links.authorizationUrl) {
-        const authRedirectUrl =
-          authInfo._links.authorizationUrl.href;
+      if (
+        !authInfo.isUserAuthorized &&
+        authInfo._links &&
+        authInfo._links.authorizationUrl
+      ) {
+        const authRedirectUrl = authInfo._links.authorizationUrl.href;
         window.open(authRedirectUrl!);
       } else {
         setIsAuthorized(true);

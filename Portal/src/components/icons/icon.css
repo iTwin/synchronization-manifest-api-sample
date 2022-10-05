@@ -1,0 +1,34 @@
+/*---------------------------------------------------------------------------------------------
+ * Copyright (c) Bentley Systems, Incorporated. All rights reserved.
+ * See LICENSE.md in the project root for license terms and full copyright notice.
+ *--------------------------------------------------------------------------------------------*/
+ 
+.icon-default {
+    fill: rgba(0, 0, 0, 0.4);
+    fill: var(--iui-icons-color);
+  }
+  
+  .icon-primary {
+    fill: #008BE1;
+    fill: var(--iui-icons-color-primary);
+  }
+  
+  .icon-positive {
+    fill: #53A21A;
+    fill: var(--iui-icons-color-positive);
+  }
+  
+  .icon-negative {
+    fill: #D30A0A;
+    fill: var(--iui-icons-color-negative);
+  }
+  
+  .icon-warning {
+    fill: #F18B12;
+    fill: var(--iui-icons-color-warning);
+  }
+  
+  .icon-size-default {
+    width: 16px;
+    height: 16px;
+  }
