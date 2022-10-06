@@ -3,36 +3,23 @@
  * See LICENSE.md in the project root for license terms and full copyright notice.
  *--------------------------------------------------------------------------------------------*/
 
-.text {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  text-align: center;
-  justify-content: center;
-  position: relative;
-  height: 100%;
-  width: 100%;
-  font-size: 24px;
-  line-height: 33px;
-}
-
 html {
   min-height: 100%;
   height: 100%;
 }
 
 body {
-  min-height: 90%;
-  height: 98%;
+  margin: 0px;
+  height: 100%;
 
+  // Styles for div's created by components in App.tsx
   #root {
-    min-height: 95%;
-    height: 98%;
+    min-height: 100%;
+    height: 100%;
   }
 
   #root > div,
   #root > div > div {
     height: 100%;
-    position: relative;
   }
 }

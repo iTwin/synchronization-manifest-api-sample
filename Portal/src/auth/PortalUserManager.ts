@@ -10,6 +10,18 @@ import { authority } from '../setup';
 const scopes =
   'imodels:modify imodels:read synchronization:modify synchronization:read';
 
+/**
+ * Authentication uses OAuth2 flow assisted by `oidc-client` package.
+ * In this function we simply create `UserManager` which can be used for signing in and redirecting to
+ * post-login page for initializing `User` object. `User` is necessary for this application to function as
+ * all further requests will require `User#access_token` for Authorization header.
+ *
+ * The `scopes` and `client_id` are copied from your application at iTwin Developer Platform (found under My Apps).
+ * `client_id` must be set in .env file at project root.
+ *
+ * See `app.tsx`, `auth/login.tsx`, `auth/authContext.tsx`, `auth/completeSignIn.tsx`
+ * for authentication flow implementation details.
+ */
 export const createUserManager = () => {
   return new UserManager({
     authority,

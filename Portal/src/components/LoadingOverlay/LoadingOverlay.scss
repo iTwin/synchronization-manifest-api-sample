@@ -3,8 +3,6 @@
  * See LICENSE.md in the project root for license terms and full copyright notice.
  *--------------------------------------------------------------------------------------------*/
 
-@import '@itwin/itwinui-css/scss/index.scss';
-
 .loading-overlay {
   width: 100%;
   height: 100%;
@@ -12,8 +10,4 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
-  > .progress-text {
-    margin-top: $iui-s;
-  }
 }

@@ -5,21 +5,28 @@
 
 import express from "express";
 import * as dotenv from "dotenv";
-import { getAccessUrl } from "./helpers/accessUrl";
+import {
+  getAzureStorageItems,
+  getSharePointStorageItems,
+} from "./helpers/externalStorage";
 
 dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-app.get("/getFolderAccessUrl", async (req, res) => {
-  const accessUrl = getAccessUrl('');
-  res.json({ accessUrl: accessUrl });
-});
-
-app.get("/getFileAccessUrl", async (req, res) => {
-  const fileName = req.query.fileName as string;
-  const accessUrl = getAccessUrl(fileName);
-  res.json({ accessUrl: accessUrl });
+// Get External storage files depending on the setup
+app.get("/getExternalStorageFiles", async (req, res) => {
+  switch (process.env.STORAGE_TYPE) {
+    case "Azure":
+      res.json(await getAzureStorageItems());
+      break;
+    case "SharePoint":
+      res.json(await getSharePointStorageItems());
+      break;
+    default:
+      console.log("Define Storage type");
+      break;
+  }
 });
 
 app.listen(PORT, () => {

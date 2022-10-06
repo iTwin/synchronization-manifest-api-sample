@@ -5,3 +5,4 @@
 
 export const apiDomain = 'https://api.bentley.com';
 export const authority = 'https://ims.bentley.com';
+export const connectionName = 'Manifest connection';

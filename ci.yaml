@@ -13,24 +13,24 @@ pr:
       - main
 
 jobs:
-- job: Synchronization_Manifest_API_Sample_Build
-  displayName: Synchronization Manifest API Sample CI build
-  pool:
-    vmImage: ubuntu-latest
-  workspace:
-    clean: all
-  steps:
-    - checkout: self
-    - task: NodeTool@0
-      displayName: Use Node 14
-      inputs:
-        versionSpec: 14.17.4
-        checkLatest: true
+  - job: Synchronization_Manifest_API_Sample_Build
+    displayName: Synchronization Manifest API Sample CI build
+    pool:
+      vmImage: ubuntu-latest
+    workspace:
+      clean: all
+    steps:
+      - checkout: self
+      - task: NodeTool@0
+        displayName: Use Node 14
+        inputs:
+          versionSpec: 14.17.4
+          checkLatest: true
 
-    - script: npm install
-      displayName: "npm install"
-      workingDirectory: "Portal"
+      - script: npm install
+        displayName: "npm install"
+        workingDirectory: "Portal"
 
-    - script: npm build
-      displayName: "npm build"
-      workingDirectory: "Portal"
+      - script: npm build
+        displayName: "npm build"
+        workingDirectory: "Portal"

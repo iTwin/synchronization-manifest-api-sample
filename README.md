@@ -1,12 +1,12 @@
 # Synchronization Manifest API sample
 
-This is a sample application that demonstrates the usage of [Manifest Connection](https://developer.bentley.com/apis/synchronization/operations/get-manifest-connection/). This application implements file upload to Azure Blob Storage functionality and basic Manifest Connection operations with the presentational result.
+This is a sample application that demonstrates the usage of [Manifest Connection](https://developer.bentley.com/apis/synchronization/operations/get-manifest-connection/). This application implements external storage files synchronization using Manifest Connection API operations with the presentational result. The supported storage types: Azure blob, Sharepoint.
 
 ## Prerequisites
 
 - [Git](https://git-scm.com/)
 - [TypeScript](https://www.typescriptlang.org/)
-- [Node](https://nodejs.org/en/): an installation of the latest security patch of Node 14. The Node installation also includes the **npm** package manager.
+- [Node](https://nodejs.org/en/): an installation of the latest security patch of Node 16. The Node installation also includes the **npm** package manager.
 - [Visual Studio Code](https://code.visualstudio.com/): an optional dependency, but the repository structure is optimized for its use.
 
 ## Setup
@@ -14,26 +14,45 @@ This is a sample application that demonstrates the usage of [Manifest Connection
 Please make sure to follow these steps for running this code sample application:
 
 1.  Clone this repository.
-1.  Create a Project, see [tutorial](https://developer.bentley.com/tutorials/create-and-query-projects-guide/) for further information.
-1.  Create an iModel inside created Project, see [tutorial](https://developer.bentley.com/tutorials/create-empty-imodel/) for further information.
-1.  `.env` file is required for setting up environmental variables used by the server application. Create `.env` file at `./synchronization-manifest-api-sample/AccessTokenGenerator` and fill out required environmental variables.
+1.  Create an [empty iModel](https://developer.bentley.com/my-imodels/). Note down context(project) and iModel IDs.
+1.  `.env` file is required for setting up environmental variables used by the server application. Create `.env` file at `./ExternalStorageDrive` and fill out required environmental variables.
 
-    The file contents should contain:
+    With Azure blob storage setup the .env file contents should contain:
 
     ```
     CONTAINER_NAME = <container name>                  // `CONTAINER_NAME` is your newly created container name inside Azure Blob storage, example: test
     CONNECTION_STRING = <connection string>            // `CONNECTION_STRING` is your Azure Storage account connection string, fake example: DefaultEndpointsProtocol=http;AccountName=devstoreaccount1;AccountKey=Eby8vdM02xNOcqFlqUwJPLlmEtl6IFsuFq2UVErCz4I6tq/K1SZFPTOtr/KBHBeksoGMGw==;
+    STORAGE_TYPE = Azure                               // Standard for all Azure blob storages
     ```
 
     Read more about the configuration of Azure Storage connection strings in the official [documentation](https://docs.microsoft.com/en-us/azure/storage/common/storage-configure-connection-string).
 
-1.  `.env` file is required for setting up environmental variables used by a portal application. Create `.env` file at `./synchronization-manifest-api-sample/Portal` and fill out required environmental variables.
+    With SharePoint storage setup the .env file contents should contain:
+
+    ```
+    CLIENT_ID = <client id>                            // `CLIENT_ID` is the unique identifier of an application created in Active Directory
+    TENANT_ID = <tenant id>                            // Your Microsoft 365 `TENANT_ID` is a globally unique identifier (GUID) that is different than your organization name or domain
+    CLIENT_SECRET = <client secret>                    // `CLIENT_SECRET` is the password of the service principal
+    AAD_ENDPOINT = https://login.microsoftonline.com/  // Standard for all SharePoint storages
+    GRAPH_ENDPOINT = https://graph.microsoft.com/      // Standard for all SharePoint storages
+    STORAGE_TYPE = SharePoint                          // Standard for all SharePoint storages
+    ```
+
+    Create a new application secret:
+
+    1. Select Azure Active Directory.
+    1. From App registrations in Azure AD, select your application.
+    1. Select Certificates & secrets.
+    1. Select Client secrets -> New client secret.
+    1. Provide a description of the secret, and a duration. When done, select Add.
+
+1.  `.env` file is required for setting up environmental variables used by a portal application. Create `.env` file at `./Portal` and fill out required environmental variables.
 
     The file contents should contain:
 
     ```
-    REACT_APP_PROJECT_ID = <Project ID>                // `REACT_APP_PROJECT_ID` is your created Project ID.
-    REACT_APP_IMODEL_ID = <iModel ID>                  // `REACT_APP_IMODEL_ID` is your created iModel's ID created inside your Project with corresponding Project ID.
+    REACT_APP_PROJECT_ID = <Project ID>                // `REACT_APP_PROJECT_ID` is your created Context(Project) ID.
+    REACT_APP_IMODEL_ID = <iModel ID>                  // `REACT_APP_IMODEL_ID` is your created iModel's ID.
     REACT_APP_CLIENT_ID = <client ID>                  // `REACT_APP_CLIENT_ID` is your [registered application's](https://developer.bentley.com/my-apps/) Client ID.
     ```
 
@@ -44,14 +63,22 @@ Please make sure to follow these steps for running this code sample application:
     - Post Logout Urls: `http://localhost:3000/signout-oidc`
 
 1.  Open two terminal tabs.
-1.  In first terminal tab navigate to `./synchronization-manifest-api-sample/AccessTokenGenerator`.
-1.  Run `yarn install` to install the required dependencies.
-1.  Run `yarn build` to build the code.
-1.  Run `yarn start` to start the server.
-1.  In the second terminal tab navigate to `./synchronization-manifest-api-sample/Portal`.
-1.  Run `yarn install` to install the required dependencies.
-1.  Run `yarn start` to start the portal.
+1.  In first terminal tab navigate to `./ExternalStorageDrive`.
+1.  Run `yarn` to install the required dependencies.
+1.  Run `yarn run build` to build the code.
+1.  Run `yarn run start` to start the server.
+1.  In the second terminal tab navigate to `./Portal`.
+1.  Run `yarn` to install the required dependencies.
+1.  Run `yarn run start` to start the portal.
 1.  Navigate to localhost:3000 (default port) in your browser.
+
+## Code overview
+
+Code is documented to help user understand how data is being used from each API call, how authorization workflow is implemented, what is the purpose of each page and some other minor details.
+
+We encourage user to understand how OAuth2 authorization workflow is implemented. In this code sample, authentication flow implementation details can be found at src/auth files.
+
+src/components is where most of the application logic is written. Component namings are self-explanatory, refer to each for further explanations of each API call and how the data is used.
 
 ## Code sample introduction
 
@@ -63,16 +90,20 @@ Code is documented to help the user understand how data is being used from each 
 
 [components](./Portal/src/components) folder contains most of application logic. Component namings are self-explanatory.
 
-[services](./Portal/src/services) folder contains Azure file upload and Manifest API functionality. Refer to each for further explanations of each API call and how the data is used.
+[services](./Portal/src/services) folder contains external storage files retrieval API usage and Manifest API functionality. Refer to each for further explanations of each API call and how the data is used.
 
-[index.ts](./AccessTokenGenerator/index.ts) contains all server logic needed for accessUrl retrieval.
+[index.ts](./ExternalStorageDrive/index.ts) contains all server logic needed for external files retrieval.
 
 ## Introduction to application workflow
 
+1.  Upload selected files to the supported storage.
 1.  Authenticate.
-1.  Drag and drop the selected file or upload it the manual way.
-1.  The loader with state information will be presented.
-1.  When the selected file will be uploaded to Azure blob storage state will change from `Uploading` to `Creating connection`.
-1.  When Manifest connection will be created the state will change from `Creating connection` to `Running connection`.
-1.  When Manifest connection will complete the run the state will change from `Running connection` to `Success` or `Fail` depending on the result. (Runs take considerate time to complete)
-1.  To upload a new file and repeat the workflow refresh the page.
+1.  Two tables will be present - one for external files information, other for synchronized files information.
+1.  Press 'Synchronize' button.
+1.  When the synchronization is done 'Synchronize' button will become active again.
+1.  Synchronized files table has updated information.
+
+## Useful tips
+
+1. If you have a corrupted connection or you want to have a new connection - change the name of 'connectionName' property in `./Portal/src/setup.ts` to the new value.
+1. Create free trial account for SharePoint: https://www.microsoft.com/en-us/microsoft-365/enterprise/office-365-e3?activetab=pivot%3aoverviewtab
