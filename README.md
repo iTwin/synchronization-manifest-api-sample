@@ -111,10 +111,10 @@ State representing files from selected storage type in the 'Files from External 
 When one of the files is updated in selected storage the file state changes to 'outdated' in the the 'Synchronized Files' area.
 ![Outdated state](img/State_outdated.png)
 
-### Synchronizated state
+### Synchronized state
 
 State representing files from selected storage type in the 'Files from External storage' area with synchronization results in the 'Synchronized Files' area.
-![Synchronizated state](img/State_synchronized.png)
+![Synchronized state](img/State_synchronized.png)
 
 ## Introduction to application workflow
 
