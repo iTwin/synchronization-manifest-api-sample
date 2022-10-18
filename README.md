@@ -108,7 +108,7 @@ State representing files from selected storage type in the 'Files from External 
 
 ### Outdated state
 
-When one of the files is updated in selected storage the file state changes to "outdated" in the the 'Synchronized Files' area.
+When one of the files is updated in selected storage the file state changes to 'outdated' in the the 'Synchronized Files' area.
 ![Outdated state](img/State_outdated.png)
 
 ### Synchronizated state
