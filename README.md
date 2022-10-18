@@ -94,6 +94,28 @@ Code is documented to help the user understand how data is being used from each 
 
 [index.ts](./ExternalStorageDrive/index.ts) contains all server logic needed for external files retrieval.
 
+## Application overview
+
+### Starting state
+
+State representing files from selected storage type in the 'Files from External storage' area without synchronization results in the 'Synchronized Files' area.
+![Starting state](img/State_starting.png)
+
+### Synchronizing state
+
+State representing files from selected storage type in the 'Files from External storage' area with synchronization progress in the 'Synchronized Files' area.
+![Synchronizing state](img/State_synchronizing.png)
+
+### Outdated state
+
+When one of the files is updated in selected storage the file state changes to 'outdated' in the the 'Synchronized Files' area.
+![Outdated state](img/State_outdated.png)
+
+### Synchronizated state
+
+State representing files from selected storage type in the 'Files from External storage' area with synchronization results in the 'Synchronized Files' area.
+![Synchronizated state](img/State_synchronized.png)
+
 ## Introduction to application workflow
 
 1.  Upload selected files to the supported storage.
