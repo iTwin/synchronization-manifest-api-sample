@@ -31,7 +31,8 @@
   },
   "resolutions": {
     "nth-check": "^2.0.1",
-    "@types/react": "^17.0.38"
+    "@types/react": "^17.0.38",
+    "minimatch": "^3.0.5"
   },
   "browserslist": {
     "production": [
