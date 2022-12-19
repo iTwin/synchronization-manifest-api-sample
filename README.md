@@ -40,11 +40,11 @@ Please make sure to follow these steps for running this code sample application:
 
     Create a new application secret:
 
-    1. Select Azure Active Directory.
-    1. From App registrations in Azure AD, select your application.
-    1. Select Certificates & secrets.
-    1. Select Client secrets -> New client secret.
-    1. Provide a description of the secret, and a duration. When done, select Add.
+    - Select Azure Active Directory.
+    - From App registrations in Azure AD, select your application.
+    - Select Certificates & secrets.
+    - Select Client secrets -> New client secret.
+    - Provide a description of the secret, and a duration. When done, select Add.
 
 1.  `.env` file is required for setting up environmental variables used by a portal application. Create `.env` file at `./Portal` and fill out required environmental variables.
 
