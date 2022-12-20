@@ -7,7 +7,7 @@ import { useEffect } from 'react';
 import { User } from 'oidc-client';
 import { useAuthContext } from './AuthContext';
 import { navigate, RouteComponentProps } from '@reach/router';
-import { LoadingOverlay } from '../components/loadingOverlay/LoadingOverlay';
+import { LoadingOverlay } from '../components/LoadingOverlay/LoadingOverlay';
 
 export const CompleteSignIn = (props: RouteComponentProps<{}>) => {
   const { userManager, setUser } = useAuthContext();

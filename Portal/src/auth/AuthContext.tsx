@@ -5,7 +5,7 @@
 
 import { User, UserManager } from 'oidc-client';
 import React, { useContext, useEffect, useState } from 'react';
-import { LoadingOverlay } from '../components/loadingOverlay/LoadingOverlay';
+import { LoadingOverlay } from '../components/LoadingOverlay/LoadingOverlay';
 import { createUserManager } from './PortalUserManager';
 
 export interface IAuthContext {

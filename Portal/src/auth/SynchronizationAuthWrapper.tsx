@@ -6,7 +6,7 @@
 import { RouteComponentProps } from '@reach/router';
 import { User } from 'oidc-client';
 import { useEffect, useState } from 'react';
-import { LoadingOverlay } from '../components/loadingOverlay/LoadingOverlay';
+import { LoadingOverlay } from '../components/LoadingOverlay/LoadingOverlay';
 import { AuthorizationInformation } from '../typedef/types';
 import { apiDomain } from '../setup';
 

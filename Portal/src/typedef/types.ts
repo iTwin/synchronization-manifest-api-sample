@@ -3,7 +3,7 @@
  * See LICENSE.md in the project root for license terms and full copyright notice.
  *--------------------------------------------------------------------------------------------*/
 
-import { components } from '../dto/synchronization';
+import { components } from '../dto/Synchronization';
 
 export type AuthorizationInformation =
   components['schemas']['AuthorizationInformation'];
