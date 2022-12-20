@@ -4,7 +4,7 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { iModelId } from '../env';
-import { useAuthContext } from '../auth/authContext';
+import { useAuthContext } from '../auth/AuthContext';
 import {
   ManifestConnection,
   ManifestRunResponse,
