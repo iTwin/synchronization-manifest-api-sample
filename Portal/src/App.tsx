@@ -3,14 +3,14 @@
  * See LICENSE.md in the project root for license terms and full copyright notice.
  *--------------------------------------------------------------------------------------------*/
 
-import './app.scss';
+import './App.scss';
 import { projectId, iModelId, clientId } from './env';
-import { useAuthContext } from './auth/authContext';
-import { CompleteSignIn } from './auth/completeSignIn';
-import { Login } from './auth/login';
+import { useAuthContext } from './auth/AuthContext';
+import { CompleteSignIn } from './auth/CompleteSignIn';
+import { Login } from './auth/Login';
 import { LocationProvider, Router } from '@reach/router';
 import { SynchronizationPage } from './components/synchronizationPage/synchronizationPage';
-import { SynchronizationAuthWrapper } from './auth/synchronizationAuthWrapper';
+import { SynchronizationAuthWrapper } from './auth/SynchronizationAuthWrapper';
 import { Layout } from './components/layout/layout';
 
 const App = (): JSX.Element => {
