@@ -14,7 +14,7 @@ This is a sample application that demonstrates the usage of [Manifest Connection
 Please make sure to follow these steps for running this code sample application:
 
 1.  Clone this repository.
-1.  Create an [empty iModel](https://developer.bentley.com/my-imodels/). Note down context(project) and iModel IDs.
+1.  Create an [empty iModel](https://developer.bentley.com/my-imodels/). Note down iModel ID.
 1.  `.env` file is required for setting up environmental variables used by the server application. Create `.env` file at `./ExternalStorageDrive` and fill out required environmental variables.
 
     With Azure blob storage setup the .env file contents should contain:
@@ -50,11 +50,9 @@ Please make sure to follow these steps for running this code sample application:
 
     The file contents should contain:
 
-    ```
-    REACT_APP_PROJECT_ID = <Project ID>                // `REACT_APP_PROJECT_ID` is your created Context(Project) ID.
-    REACT_APP_IMODEL_ID = <iModel ID>                  // `REACT_APP_IMODEL_ID` is your created iModel's ID.
-    REACT_APP_CLIENT_ID = <client ID>                  // `REACT_APP_CLIENT_ID` is your [registered application's](https://developer.bentley.com/my-apps/) Client ID.
-    ```
+    REACT_APP_IMODEL_ID = iModelID (`REACT_APP_IMODEL_ID` is your created iModel ID)
+
+    REACT_APP_CLIENT_ID = clientID (`REACT_APP_CLIENT_ID` is your [registered application's](https://developer.bentley.com/my-apps/) Client ID)
 
     Registered application's:
 

@@ -4,7 +4,7 @@
  *--------------------------------------------------------------------------------------------*/
 
 import './App.scss';
-import { projectId, iModelId, clientId } from './env';
+import { iModelId, clientId } from './env';
 import { useAuthContext } from './auth/AuthContext';
 import { CompleteSignIn } from './auth/CompleteSignIn';
 import { Login } from './auth/Login';
@@ -16,7 +16,7 @@ import { Layout } from './components/layout/layout';
 const App = (): JSX.Element => {
   const { user } = useAuthContext();
 
-  return projectId && iModelId && clientId ? (
+  return iModelId && clientId ? (
     <LocationProvider>
       <Layout>
         <Router>
