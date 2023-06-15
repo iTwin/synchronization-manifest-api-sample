@@ -31,7 +31,7 @@ export const getSynchronizedDate = (task: RunFileResult | undefined) => {
   return task
     ? task.result === 'Undetermined'
       ? ''
-      : formatDate(task.endDateTime + 'Z')
+      : formatDate(task.endDateTime!)
     : '';
 };
 
