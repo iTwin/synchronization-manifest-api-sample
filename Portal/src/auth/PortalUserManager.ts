@@ -8,7 +8,7 @@ import { clientId } from '../env';
 import { authority } from '../setup';
 
 const scopes =
-  'imodels:modify imodels:read synchronization:modify synchronization:read';
+  'itwin-platfrom';
 
 /**
  * Authentication uses OAuth2 flow assisted by `oidc-client` package.
