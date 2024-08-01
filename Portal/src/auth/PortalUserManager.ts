@@ -8,7 +8,7 @@ import { clientId } from '../env';
 import { authority } from '../setup';
 
 const scopes =
-  'itwin-platfrom';
+  'itwin-platform';
 
 /**
  * Authentication uses OAuth2 flow assisted by `oidc-client` package.
